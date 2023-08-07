@@ -1,17 +1,97 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-      <title>Cody's Awesome Website</title>
+      <title>Cody's Website</title>
+      <style>
+        body {
+            background: rgb(125, 198, 205);
+            color: rgb(45, 45, 45);
+            padding: 10px;
+            font-family: arial;
+        }
+        #all-contents {
+            max-width: 800px;
+            margin: auto;
+        }
+    
+        /* navigation menu */
+        nav {
+            background: rgb(153, 102, 204);
+            margin: 0 auto;
+            display: flex;
+            padding: 10px;
+            margin-bottom: 20px
+        }
+        nav h1 {
+            display: flex;
+            align-items: center;
+            color: white;
+            flex: 1;
+            margin: 0;
+        }
+        nav ul {
+            list-style-image: none;
+        }
+        nav li {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+    
+        /* main container area beneath menu */
+        main {
+            background: rgb(153, 102, 204);
+            display: flex;
+        }
+        .sidebar {
+            margin-right: 25px;
+            padding: 10px;
+        }
+        .sidebar img {
+            width: 200px;
+        }
+        .content {
+            flex: 1;
+            padding: 15px;
+        }
+        h2, h3 {
+            margin: 0px;
+        }
+    </style>
     </head>
     
     <body>
         <div id="all-contents"> 
             <nav>
-    
+                <h1>Cody's Website</h1>
             </nav>
     
             <main>
-    
+                <div class="sidebar">
+                    <img src=https://scontent-dfw5-2.xx.fbcdn.net/v/t1.6435-9/61123665_10214814935386307_3058254651645231104_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=174925&_nc_ohc=YBDVacAF5gcAX_ujHnz&_nc_ht=scontent-dfw5-2.xx&oh=00_AfAr02SufTQCxbejsvxar1KMfwfXpz826F0HnTbKx8QaVg&oe=64F8B996>
+                </div>
+            
+                <div class="content">
+                  <h1>Cody Daigle</h1>
+                  <li>
+                    <a href="index.html"> Home </a>
+                  </li>
+                  <li>
+                    <a href="portfolio.html"> Portfolio </a>
+                </li>
+                  <p>Student</p>
+                  <div id="interests">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Cooking</li>
+                        <li>Coding</li>
+                        <li>Golf</li>
+                    </ul>
+                </div>
+                </div>
             </main>
         </div>
     </body>

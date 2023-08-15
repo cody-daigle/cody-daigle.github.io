@@ -1,4 +1,5 @@
 /**
+ * 
  * CONTROL FLOW:
  * 
  * 0. The Control Flow is the order the computer executes code in a script. The order goes from the first line in the file to the last, however
@@ -14,7 +15,7 @@
  */
 
  //if else statement
- 
+
 let drink = 'water';
 if(drink === 'Coke'){
     console.log('Invented by a pharmacist'); //the condition was not met so this is not logged
@@ -23,12 +24,11 @@ if(drink === 'Coke'){
 }
 console.log(drink); //<-- Will log 'Hydration Nectar' to the console.
 
-/*
-console.log(drink); //<-- Will log 'Hydration Nectar' to the console.
+/**
  *
  * 2. Functions: A piece of code that can be summoned by other code, a variable, or even itself(yikes). These snippets contain arguments, or 'seats', 
  *      that are passed into the function so that it may return a value. The function name's scope is dependant on whether if the name is a declaration or
- *      an expression.
+ *      an expression. console.log() is a common function we utilize to print to the console
  */
 
 //function that takes in one perarameter that represents a string

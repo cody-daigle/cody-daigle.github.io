@@ -1,18 +1,17 @@
 /**
- *                                               FUNCTIONS
  * 
  * FUNCTIONS:
  * 
  * 0. A statement, or set of statements, that performs a task or calculates a value. This operation is similar
- * to a procedure. In order to classify as a function, it must take in some input and return an output. Also,
- * the two must have an obvious relationship with one another. Facebook Official, if you will. Furthermore,
- * these requirements are called 'parameters' that are passed to a function by a value.
+ *  to a procedure. In order to classify as a function, it must take in some input and return an output. Also,
+ *  the two must have an obvious relationship with one another. Facebook Official, if you will. Furthermore,
+ *  these requirements are called 'parameters' that are passed to a function by a value.
  * 
  * 
  * 1. The life cycle of a Func - Nonpoint 2002
  * 
  *  There are two steps when it comes to using functions:
- *  First you need to create a function definition or function expression.
+ *  First, you need to create a function definition or function expression.
  *  Next, the function can be executed by calling, or invoking, it.
  *  Execute, Call, and Invoke mean the same in regards to the function. So, dealer's choice on the verbage.
  * 

@@ -1,10 +1,12 @@
 /**
+ * 
  * DATATYPES:
+ * 
  * 0. There are eight data types in Javascript: Number, Boolean, Null, Object, String, Bigint, undefined,
- * and Sybol. However there are also Object data types that may contain a date, an array, and even 
- * another object. Variables can have any data type assigned to it or reassigned since they are not 
- * confined to a specific data type. Null is defined as 'Null' and undefined is ironically defined as
- * 'undefined'. Complex data types are list-like structures called Object and array. 
+ *  and Sybol. However there are also Object data types that may contain a date, an array, and even 
+ *  another object. Variables can have any data type assigned to it or reassigned since they are not 
+ *  confined to a specific data type. Null is defined as an 'Object' and undefined is, ironically, defined as
+ *  'undefined'. Complex data types are list-like structures called Object and array. 
  * 
  * 1. Simple/Primitive Datatypes - Primitive data types define immutable values and can be tested 
  *                      using the 'TypeOf' operator except 'null' and 'undefined'. These value are
@@ -31,6 +33,9 @@ var obj = { //complex
     number: 1, //simple
     string: 'Cody', //simple
     boolean: false, //simple
-    array: ['list', 'of', 'items'] //complex
+    array: ['list', 'of', 'items'], //complex
+    nonConfig: undefined, //simple
+    absence: null //simple, even though it is technically an object, but Javascript is passed the point of changing this.
+    
 };
-console.log(obj) //logs the Object to the console
+console.log(obj) //function that is invoked to print the specified item to the console

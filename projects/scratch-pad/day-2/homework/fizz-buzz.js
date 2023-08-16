@@ -27,6 +27,7 @@ function fizzBuzz() {
     }else if(i % 5 === 0){
     //log string if true
         console.log('Buzz');
+        //else its a number not divisible
     }else{
         console.log(i)
     }

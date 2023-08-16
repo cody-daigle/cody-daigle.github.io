@@ -14,7 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    return Array.isArray(value);
     
     
     
@@ -31,7 +31,29 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
+    //rule out non objects by forcing them to false in order to get pure object
+    //array
+    if(Array.isArray(value)){
+        //log false
+        return false;
+        //null
+    }else if(value === null){
+        //log false
+        return false;
+        //not a date
+    }else if(value instanceof Date){
+        //log false
+        return false;
+        //all primitives
+    } else if(typeof value !== 'object'){
+        //log false
+        return false;
+        //else it has to be a collection
+    }else{
+        //only thing left is pure object
+        return true
+    }
+
     
     
     
@@ -46,7 +68,28 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+        //rule out non objects by forcing them to false in order to get pure object
+    //array
+    if(Array.isArray(value)){
+        //log false
+        return true; //same as last one, but changing to accept array
+        //null
+    }else if(value === null){
+        //log false
+        return false;
+        //not a date
+    }else if(value instanceof Date){
+        //log false
+        return false;
+        //all primitives
+    } else if(typeof value !== 'object'){
+        //log false
+        return false;
+        //else it has to be a collection
+    }else{
+        //only thing left is pure object
+        return true
+    }
     
     
     
@@ -74,10 +117,10 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //check if value is array
+    //array
+    //check if object types are specified types
+    //account for all primatives
     // YOUR CODE ABOVE HERE //
 }
 

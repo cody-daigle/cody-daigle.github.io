@@ -12,8 +12,25 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
-
+   //loop through numbers
+   for(let i = 1; i <= 100; i++){
+    //i is all numbers between i & 100
+//check if i is divisible by 3 & 5
+    if(i % 3 === 0 && i % 5 === 0){
+    //log string if true
+        console.log('FizzBuzz');
+    //check if only factor of 3
+    }else if(i % 3 === 0){ //apparently it's sensative with which one is 3 and which one is 5...
+    //log string if true
+        console.log('Fizz');
+    //check if only factor of 5
+    }else if(i % 5 === 0){
+    //log string if true
+        console.log('Buzz');
+    }else{
+        console.log(i)
+    }
+}
 
     // YOUR CODE GOES ABOVE HERE //
 }

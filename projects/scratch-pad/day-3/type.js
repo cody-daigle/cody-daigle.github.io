@@ -91,8 +91,6 @@ function isCollection(value) {
         return true
     }
     
-    
-    
     // YOUR CODE ABOVE HERE //
 }
 
@@ -117,10 +115,24 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    //check if value is array
-    //array
-    //check if object types are specified types
-    //account for all primatives
+   //eliminate the 'objects'
+   //check if value is an array
+   if(Array.isArray(value)){
+    //log as 'array' says undefined instead...
+        return 'array';
+        //check if value is null
+   }else if(value === null){
+    //log null instead of object
+        return 'null';
+        //check if instance of date
+   }else if(value instanceof Date){
+    //log string of date
+        return 'date';
+        //check for the simple types
+   }else if(typeof value !== 'object'){
+        //log the non-object datatypes
+        return typeof value;
+   }
     // YOUR CODE ABOVE HERE //
 }
 

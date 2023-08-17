@@ -32,7 +32,6 @@
  *          Functions: A statement, or set of statements, that performs a task or calculates a value.
  *          Date: An object that is multiple methods to manipulate calender dates.
  * 
- * 3. Honorable Mentions - 
  * 
  * 
  */
@@ -45,7 +44,7 @@ var obj = { //complex
     nonConfig: undefined, //simple
     absence: null //simple, even though it is technically an object, but Javascript is passed the point of changing this.
     
-};
+}
 console.log(obj) //function that is invoked to print the specified item to the console
 
 //Here is a list of the datatypes being defined with their respective operator

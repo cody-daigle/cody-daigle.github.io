@@ -23,7 +23,16 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    //create output array
+    let output = [];
+    //check range from start to end
+    if(start > end){
+
+        output.push(); //otherwise loop in reverse and then push to empty array in reverse order
+        //return output.push(start)
+    }else if(start < end){
+
+    }
     
     
     

@@ -98,11 +98,23 @@ function createEndsWithFilter(endsWith) {
  * 
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
- */
+
+//strings = [1, 2, 3, 4, 5] //for replit
+//modify is the function() being used to change the strings
+//functions are just like variables so forget the crazy stuff and KISS
+ */           //array of strings, callback function
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    //element holder
+    //create storage
     let arr = [];
+     //loop through passed in array
+        for(let i = 0; i < strings.length; i++){
+            //push elements into storage
+            arr.push(modify(strings[i]));
+            //how to return? if thats even the issue
+        }
+        return arr;
+    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -118,6 +130,19 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    //storage array
+     let store1 = [];
+     let store2 = [];
+    //loop over array of strings
+    for(let i = 0; i < strings.length; i++){
+        //strings[i] is each string within the array
+            //test the strings 
+            if(test(strings[i])){
+                store1.push(strings[i])
+            }else{
+                store2.push(strings[i])
+            }
+        }
     
     
     

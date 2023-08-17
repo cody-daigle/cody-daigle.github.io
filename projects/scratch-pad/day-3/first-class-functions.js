@@ -111,7 +111,6 @@ function modifyStrings(strings, modify) {
         for(let i = 0; i < strings.length; i++){
             //push elements into storage
             arr.push(modify(strings[i]));
-            //how to return? if thats even the issue
         }
         return arr;
     
@@ -130,19 +129,19 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    //storage array
-     let store1 = [];
-     let store2 = [];
     //loop over array of strings
-    for(let i = 0; i < strings.length; i++){
+    //for(let i = 0; i < strings.length; i++){
         //strings[i] is each string within the array
             //test the strings 
-            if(test(strings[i])){
-                store1.push(strings[i])
-            }else{
-                store2.push(strings[i])
-            }
+          let str = strings.every((ele) => test(ele))
+        if(str === true){
+            return true
+        }else{
+            return false
         }
+          
+
+            //}
     
     
     

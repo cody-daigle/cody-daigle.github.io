@@ -23,17 +23,28 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
+
+    //range([start=0, end, increment/decrement])
     //create output array
     let output = [];
-    //check range from start to end
-    if(start > end){
-
-        output.push(); //otherwise loop in reverse and then push to empty array in reverse order
-        //return output.push(start)
-    }else if(start < end){
-
+    //check if start is less than end
+    if(start < end){
+        //loop between start number until it is equal to end
+        for(let i = start; i <= end; i++){
+            //push each counting number to the array
+            output.push(i);
+        }
+        //else start is larger than end
+    }else if(start > end){
+        //iterate through two numbers, but adding the numbers from end to start
+        for(let i = end; i <= start; i++){
+            //undhift the number into output
+            output.unshift(i);
+            
+        }
     }
-    
+    return output
+
     
     
     // YOUR CODE GOES ABOVE HERE //

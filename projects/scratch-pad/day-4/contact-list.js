@@ -90,14 +90,21 @@ function makeContactList() {
         },
         printAllContactNames: function(){
             //create empty string variable
-            let arr = [];
+            let names = '';
             //iterate over contacts array
             for(let i = 0; i < contacts.length; i++){ //contacts[i] is each object in contacts array
-                // create fullName variable
-                let fullName = `${contacts[i].nameFirst} ${contacts[i].nameLast}`;
-                    //need to add line break in between each contact
-                    arr.push(fullName);
-                    
+                //create condition to not do last element
+                if(contacts[i] === contacts[contacts.length - 1]){
+                    // create finalName variable for last contact without \n 
+                    let finalName = `${contacts[i].nameFirst} ${contacts[i].nameLast}`;
+                    //add the name at final index
+                    return names += finalName;
+                    //else its still looping and adding to names string
+                } else{
+                    // create fullName variable for list
+                    let fullName = `${contacts[i].nameFirst} ${contacts[i].nameLast}\n`; 
+                    names += fullName;
+                }     
             }
         }
     }

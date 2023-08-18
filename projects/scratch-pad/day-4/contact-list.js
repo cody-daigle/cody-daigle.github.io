@@ -75,25 +75,38 @@ function makeContactList() {
         },
         //takes a contact object to be removed from the contact-list.
         removeContact: function(contact){
+                //create storage array
             //iterate through contacts array
-            //contacts.filter((x) => x === contact) //incorrect syntax?
             for(let i = 0; i < contacts.length; i++){
             //contacts[i] is each object
-            var list = contacts[i]
-            //I need to remove the contact that matches with contacts[i]
-            //check if each contacts index id the same as contact
-                if(list.id === contact.id){
-            //remove that contact from the contacts array
-                return contacts.splice(list);
+            //splice returns a shallow copy of all the contacts that are not 'contact'
+            if(contacts[i].id !== contact){
+                //splice into the shallow copy, delete contact
+                contacts.splice(i, 1)
                 }
+                
             }
             
+        },
+        printAllContactNames: function(){
+            //create empty string variable
+            let arr = [];
+            //iterate over contacts array
+            for(let i = 0; i < contacts.length; i++){ //contacts[i] is each object in contacts array
+                // create fullName variable
+                let fullName = `${contacts[i].nameFirst} ${contacts[i].nameLast}`;
+                    //need to add line break in between each contact
+                    arr.push(fullName);
+                    
+            }
         }
     }
 }
 
 
-
+// The printAllContactNames() Function should 
+//  return a String formated with all the full-names of the separated 
+//  with a line-break, like so:
 
 // YOUR CODE GOES ABOVE HERE //
 

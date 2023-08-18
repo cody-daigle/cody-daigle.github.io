@@ -28,14 +28,19 @@
  *         myContacts.printAllContactNames(); // => Max Gaudin
  *                                                  John Fraboni
  *                                                  Kaelyn Chresfield
- *          
+ *              "Max Gaudin\nJohn Fraboni"         
+ * 
  *          WARNING: To pass this test, the LAST full name should have NO
  *          new-line character added after it!
  */
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    return {
+        id: id,
+        nameFirst: nameFirst,
+        nameLast: nameLast
+    }
 } 
 
 
@@ -43,12 +48,46 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts =[];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact: function(contact){
+            contacts.push(contact)
+        },
+        findContact: function(fullName){
+            //iterate through contacts list
+            for(let i = 0; i < contacts.length; i++){
+                //contacts[i] is each contact
+            //check if fullName includes contacts[i].nameFirst
+                if(fullName.includes(contacts[i].nameFirst)){
+                    //return the contact object
+                    return contacts[i];
+                    //else return undefined
+                }else{
+                    return undefined;
+                }
+            }
+            
+        },
+        //takes a contact object to be removed from the contact-list.
+        removeContact: function(contact){
+            //iterate through contacts array
+            //contacts.filter((x) => x === contact) //incorrect syntax?
+            for(let i = 0; i < contacts.length; i++){
+            //contacts[i] is each object
+            var list = contacts[i]
+            //I need to remove the contact that matches with contacts[i]
+            //check if each contacts index id the same as contact
+                if(list.id === contact.id){
+            //remove that contact from the contacts array
+                return contacts.splice(list);
+                }
+            }
+            
         }
     }
 }

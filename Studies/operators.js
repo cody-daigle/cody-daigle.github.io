@@ -29,19 +29,7 @@
  *            (bang, OR, AND)
  *    Used with logical values to return a boolean or a value of the operand
  * 
- *  -Relational => 'in'
- *    Compares two operands, based on if the comparison is true, and returns a boolean
- * 
- *  -Comma => ',' 
- *    Evaluates two operates and returns the value of the last operand. Primarily used within a for-loop
- * 
- *  Bigint => Utilizes all the same operators that can be used with a number
- *    This takes the place of a number that is too large for Javascript to handle(Exceeds the numerical limit)
- * 
- *  Bitwise => 'a&b, a|b, a^b, ~a,     a<<b,               a>>>b,             a>>b'
- *             (AND, OR,  XOR, NOT, shift left, shift right(zero fill), shift right(sign propagating))
- *    Treats operands as binary, instead of a decimal. Performs in binary, but returns standard numerical values
- * 
+ 
  *  Unary =>
  *  Ternary =>
  * 

@@ -2,11 +2,11 @@
  * 
  * DATATYPES:
  * 
- * 0. There are eight data types in Javascript: Number, Boolean, Null, Object, String, Bigint, undefined,
- *  and Symbol. However there are also Object data types that may contain a date, an array, and even 
- *  another object. Variables can have any data type assigned to it or reassigned since they are not 
+ * 0. There are many data types in Javascript such as: Number, Boolean, Null, Object, String, NaN, undefined,
+ *  Function, infinity, and -infinity. However there are also Object data types that may contain a Date, an Array, and even 
+ *  another Object. Variables can have any data type assigned to it or reassigned since they are not 
  *  confined to a specific data type. Null is defined as an 'Object' and undefined is, ironically, defined as
- *  'undefined'. Complex data types are list-like structures called Object and array. 
+ *  'undefined'. Complex data types are list-like structures/collections called Object and array. 
  * 
  * 1. Simple/Primitive Datatypes - Primitive data types define immutable values and can be tested 
  *         using the 'TypeOf' operator except 'null' and 'undefined'. These value are
@@ -18,13 +18,12 @@
  *          Booleans: truthy or falsey values.
  *          Undefined: A non-writable, non-configurable property of the global scope.
  *          Null: A falsey value for booleans and it is the absence of an object value
- *          Symbol: A built-in primative object whose constructor will return a unique symbol value.
- *          Bigint: Variables that are used as a storage for integer numbers that are too large to be represented by a normal Javascript number.
+ *          NaN:
  * 
  * 
  * 2. Complex - Defined as Objects, they are indentiers that reference values in memory.
- *          These datatypes are the only mutable values and can be called/invoke. Functions are
- *          also defined as objects are can be invokes as well.
+ *          These datatypes are mutable and have no cap to how many key/values it can hold. Objects and Functions, which are
+ *          also defined as objects, can be invoked.
  * 
  *     Complex data types:
  *          Object: An 'Associative Array', list like structure that contains key/value pairs.

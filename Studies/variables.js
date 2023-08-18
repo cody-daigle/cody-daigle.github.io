@@ -13,10 +13,12 @@
  * 
  * 3. Reassignment - After a varaible has been assigned a value it can be reassigned later in the code, if needed.
  * 
- * 4.Var, Let, Const - Each keyword has different capabilies and uses. Var and Let Keywords can be reassigned another value 
- *      where as const or 'Constant' variables cannot be reasigned another value. The difference between var and let is 'Let' is block scoped 
- *      and must be declared before it can be used, but 'VAR' is function scoped, can be accessed throughout the function 
- *      and can be used before declared due to hoisting
+ * 4. Var, Let, Const - Each keyword has different capabilies and uses. Var and let Keywords can be reassigned another value 
+ *      where as const or 'constant' variables cannot be reasigned another value. The difference between var and let is 'let' is block scoped 
+ *      and must be declared before it can be used, but 'var' is function scoped, can be accessed throughout the function 
+ *      and can be used before declared due to hoisting.
+ * 
+ * 5. Hoisting - 
  */
 
 //declaration with var

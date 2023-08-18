@@ -10,27 +10,22 @@
  *  goal. Some loops are created to iterate through an array forwards or backwards to look for a specific element or even to specific indexs.
  *  There are even loops that can be used in order to iterate through Objects to get the key, value, or even both at the same time.
  * 
- *  Javascript statements for loops are:
+ *  Javascript loops:
+ *  -while - This will execute until the condition evaluates to true. 
+ *            Utilized when the interation amount IS known
+ *  -for - 
+ *  -for...in - 
  * 
- *  -for statement - This will loop repeatedly until the given condition evaluates to false. 
- *      Utilized when the interation amount IS NOT known
- *  -for...of statement - 
- *  -for...in statement - 
- *  -while statement - Unlike the for and do...while this will execute until the condition evaluates to true. 
- *      Utilized when the interation amount IS known 
- *  -do...while statement - Repeats until specified condition evaluates to false, just like the for loop.
- *  -break statement - This is utilized to terminate a loop or specified label statement, to transfer control to the following statement
- *  -continue statement - 
- *  -labeled statement - Is an identifier that will allow you to refer to it anywhere within the program or 
- *      to identify a loop in order to act upon that loop
+ *  be able to loop any number of times, forward counting up to some limit, backward counting down to 0
+ *  loop over an array, forwards and bacwards
+ *  looop over an object
+ * 
  * 
  */
 
 for (initialization; condition; afterthought)
   statement
 
-do
-  statement
 while (condition);
 
 let n = 0;
@@ -39,5 +34,16 @@ while (n < 3) {
   n++;
   x += n;
 }
+
+let snack = {
+  crunch: 'Chips',
+  soft: 'Cookies',
+  chewy: 'Gummies'
+}
+for (let key in snack) {
+  console.log(key) //<-- Will log the keys crunch, soft, chewy to console.
+  console.log(snack[key]) //<-- Will log the values Chips, Cookies, Gummies to the console
+}
+
 
 

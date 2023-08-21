@@ -1,11 +1,11 @@
 /**
  * VARIABLES:
- *  0. Variables are named containers that store data. These containers hold values in memory and point to any datatype such as an
- *  array, number, boolean, string, object, etc. There are three keywords that are used to create a variable; var, let, and const. 
- *  All though effectively the same thing, each one has niche capabilities that the others may not. 
- *  With that being said using the wrong one could also affect the code to a point of errors. 
- *  The actions that are taken for variables are Declaration, Assignment, Initialization,
- *  and even Reassignment, depending on the keyword used.
+ *  0. Variables are containers with identifiers that store data.. These containers hold values in memory and 
+ *  point to any datatype such as an array, number, boolean, string, object, etc. There are three keywords 
+ *  that are used to create a variable; var, let, and const. All though effectively the same thing, 
+ *  each one has niche capabilities that the others may not. With that being said using the wrong one 
+ *  could also affect the code to a point of errors. The actions that are taken for variables are 
+ *  Declaration, Assignment, Initialization, and even Reassignment, depending on the keyword used.
  * 
  * 1. Declaration - Stating the named variable
  * 
@@ -21,10 +21,11 @@
  * 5. Hoisting - 
  */
 
-//declaration with var
-var cooking;
 //assignment
 cooking = 'Food';
+//declaration with var
+var cooking; 
+
 //logging to console
 console.log(cooking); //logs 'Food' to console
 

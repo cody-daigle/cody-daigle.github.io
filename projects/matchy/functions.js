@@ -60,9 +60,11 @@ function search(animals, name){
 //////////////////////////////////////////////////////////////////////
 function replace(animals, name, replacement){
     //array, string, object
-    //iterate through array becuse no HOF work
+    //iterate through array 
     for(let i = 0; i < animals.length; i++){
+        //if animals name is the same as searched
         if(animals[i].name === name){
+            //if the animal exists replace animals[i]
             animals[i] = replacement
         }
     }
@@ -87,18 +89,9 @@ function remove(animals, name){
         if(animals[i].name === name){
             animals[i] = 0 //how? lol
         }
+        return animals
     }
-    // for(let i = 0; i < animals.length; i++){
-    //     //if animal object's name matches
-    //     if(animals[i] === name){
-    //         //delete the object
-    //         delete animals[i]
-    //     }
-    // }
 }
-
-
-
 
 
 

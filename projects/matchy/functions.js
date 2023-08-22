@@ -82,17 +82,17 @@ function replace(animals, name, replacement){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(animals, name){
-
-   let ind = animals.indexOf(name) > 0
-    delete animals
-   
-    //store
     //loop through animals array
+    for(let i = 0; i < animals.length; i++){
+        if(animals[i].name === name){
+            animals[i] = 0 //how? lol
+        }
+    }
     // for(let i = 0; i < animals.length; i++){
-    //     if(animals[i].name === name){
+    //     //if animal object's name matches
+    //     if(animals[i] === name){
+    //         //delete the object
     //         delete animals[i]
-    //     }else{
-    //         !delete animals[i]
     //     }
     // }
 }
@@ -118,7 +118,21 @@ This is called **data validation** and it's extremely important in web developme
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function add(animals, animal){
+    //array of animals, animal object
+    for(let i = 0; i < animals.length; i++){
+        //conditions variable
+        //checks if animal has a name property with a length > 0 && check if animal has species property
+        let cond = animals[i] && animals[i].name.length > 0 && animals[i].species.length > 0;
+        //has a unique name
+        if(cond !== animal && animal.name !== animals[i].name){
+            //add new object to animals array ONLY if all other conditions pass;
+          animals.push(animal);
+        }
+        return animals
+    }
 
+}
 
 
 /**

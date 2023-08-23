@@ -12,8 +12,12 @@
  *  -Assignment => Assigns a value to the first operand based on the second operand;
  *      equals => '='
  *      concatenate => '+' or '+='
+ * 
  *     example:
- *          var str = 'example' //<- assigns the variable str to the string value of 'example'
+ *          var str = 'example'; //<- assigns the variable str to the string value of 'example'
+ *          var newStr = `This is a new `;
+ *          str += newStr;
+ *          console.log(str);
  * 
  *  -Comparison => Compares two operands and based on if the comparison is true it will return a logical value.
  *      less than => '<'
@@ -21,6 +25,9 @@
  *      bang/NOT => '!'
  *      loosley equals => '=='
  *      strictly equals => '==='
+ * 
+ *     example:
+ *         **Put example here**
  * 
  *  -Arithmetic => Takes two numerical operands and returns a single numerical value
  *      add => '+'
@@ -31,20 +38,31 @@
  *      increment => '++'
  *      decrement => '--'
  * 
+ *      example:
+ *          **Put example here**
  * 
  *  -Logical => Used with logical values to return a boolean or a value of the operand
  *      bang => '!'
  *      OR => '||'
  *      AND => '&&'
  * 
+ *       example:
+ *          **Put example here**
+ * 
  *  -Unary => Operators that take in a single operand and perform all the operations on that single operand
  *      delete
  *      typeof
  *      void =>
+ * 
+ *       example:
+ *         **Put example here**
  *      
  *  -Ternary(Conditional Operator) => The only operator that takes three operands, in Javascript. The operator can have one of two values 
  *              based on the given condition. I look at it like an if-else statement.
  *      ternary => condition ? value : value1; //if the condition is met then return value else return value1
+ * 
+ *       example:
+ *          **Put example here**
  *
  * 
  */

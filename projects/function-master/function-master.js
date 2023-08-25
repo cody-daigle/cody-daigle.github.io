@@ -2,7 +2,7 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-const { each } = require("lodash");
+//const { each } = require("lodash");
 
 //const { set } = require("lodash");
 
@@ -134,29 +134,65 @@ function addFriend (name, object) {
 function isFriend(name, object) {
   //variable to store friends?
 //loop through friends array of object
- for(let i = 0; i < object.friends.length; i++){
-    let arr = object.friends[i];
-    // arr is each friend in the array
-    if(object.friends === undefined){
+if(!object.friends){
+    return false;
+}
+//account for conditions
+//remove all things that arent needed?
 
+ for(let i = 0; i < object.friends.length; i++){
+    //object.friends[i] is each friend in the friends array
+    let friend = object.friends[i];
+    //check if name being searched is in friend array
+    if(friend === name){
+        return true
+        } 
     }
- }
+    //return outside of for loop so it still iterates...you knew that...
+    return false;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+/*
+i: a name and an array
+o: a list of the names that the input is NOT friends with
+c: capitalized first letter of names
+e: account for empty array
+*/
+//Should take a name and a list of people, and return a list of all the names that <name> is not friends with"
 function nonFriends(name, array) {
-  
+        //make a variable to store the list of names the input is not friends with
+      let notFriendsList = [];
+      //iterate through the array of objects
+        for(let i = 0; i < array.length; i++){
+            //arr is each object
+        let arr = array[i]
+           //iterate through each friends array
+           if(name !== arr.name){
+               //loop thrugh that persons friends list?
+               //this is each person in an objects friends array
+            let friend = arr.friends 
+               //see if they have friends?
+               //check if the input name is in that persons friends array
+            if(!friend.includes(name)){
+                //if not in their friends array then push that name to not friends
+            notFriendsList.push(arr.name);                  
+            }
+        }
+    }
+            return notFriendsList;
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. 
+//If <key> does not exist on <object> create it."
 function updateObject(object, key, value) {
-
+let obj = Object.assign(object, key)
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -164,12 +200,7 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    //loop over object
-    // for(let key in object){
-    //     let arr = arr.map((val) =>{
-       
-    // })
-    // }
+
 }
 
 //////////////////////////////////////////////////////////////////////

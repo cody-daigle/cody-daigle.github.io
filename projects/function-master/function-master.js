@@ -192,16 +192,28 @@ function nonFriends(name, array) {
 //Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. 
 //If <key> does not exist on <object> create it."
 function updateObject(object, key, value) {
-let obj = Object.assign(object, key)
+    object[key] = value;
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//Should take an object and an array of strings. 
+//Should remove any properties on <object> that are listed in <array>"
 function removeProperties(object, array) {
-
+    //iterate through object entries
+    let entry = Object.entries(object); //returns an array of the objects properties
+    console.log(entry)
+    // iterate through entry array?
+    for(let i = 0; i < array.length; i++){
+        //check if array has any same element as objects property
+        if(entry.includes(array[i])){
+            delete object.entry
+        }
+    }
 }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////

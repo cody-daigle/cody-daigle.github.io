@@ -3,24 +3,61 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
-
+function triangles(n) {
+//increment n up to 7?
+  for(let i = '#'; i.length <= n; i += '#'){
+console.log(i)
+  }
 }
+
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  
+  for(let i = 1; i <= 15; i++){
+    //check if divis by 5 and 3
+  if(i % 5 === 0 && i % 3 === 0){
+    console.log("fizzbuzz");
+    //check if divis by 5
+  }else if(i % 5 === 0){
+    console.log("buzz");
+    // check if divis by 3
+  }else if(i % 3 === 0){
+    console.log("fizz")
+    //else print the num
+    } else{
+    console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function drawChessboard() {
-
+function drawChessboard(size) {
+  //empty string for chessboard
+let chess = '';
+//first loop
+for (let i = 0; i < size; i++) {
+  //second loop
+  for (let e = 0; e < size; e++) {
+    //check if i + e is even
+    if ((e + i) % 2 == 0) {
+      //if it is then add a space
+      chess += ' ';
+      //otherwise place a #
+    } else {
+      chess += '#';
+    }
+  }
+  // add a line break after each set
+  chess += '\n';
 }
+console.log(chess)
+//return chess
+}
+//console.log(drawChessboard(8))
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

@@ -43,7 +43,7 @@
  * 
  * 6. Scope: Functons can see and modify variables in parent or global scopes. The inverse is NOT true <- question? just information?
  * 
- * 7. Closures: Functions form closures around the data they house. if an object returned fromthe function and is
+ * 7. Closures: Functions form closures around the data they house. if an object returned from the function and is
  * held in memory somewhere or referenced that closure stays ALIVE and data can cont to exist in these closures
  */
 

@@ -202,17 +202,17 @@ function updateObject(object, key, value) {
 //Should take an object and an array of strings. 
 //Should remove any properties on <object> that are listed in <array>"
 function removeProperties(object, array) {
-    //iterate through object entries
-    let entry = Object.entries(object); //returns an array of the objects properties
-    console.log(entry)
-    // iterate through entry array?
-    for(let i = 0; i < array.length; i++){
-        //check if array has any same element as objects property
-        if(entry.includes(array[i])){
-            delete object.entry
-        }
+    //array is pointing at objects values: copy by reference?
+   //or is this a closure situtation?
+  for(let keys in object){
+    if(array.includes(keys)){
+      delete object[keys];
+     // console.log(object)
     }
-}
+  }
+   return object
+     //delete whatever is in the array argument from object
+ }
 
 
 //////////////////////////////////////////////////////////////////////

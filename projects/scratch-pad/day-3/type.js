@@ -128,7 +128,9 @@ function typeOf(value) {
    }else if(value instanceof Date){
     //log string of date
         return 'date';
-        //check for the simple types
+   }else if(typeof value === 'object' && typeof value !== null){
+        return 'object'
+            //check for the simple types
    }else if(typeof value !== 'object'){
         //log the non-object datatypes
         return typeof value;

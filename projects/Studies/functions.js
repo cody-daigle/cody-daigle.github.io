@@ -56,8 +56,8 @@
 
 //function that takes in one perarameter that represents a string
 
-function fizz(soda) {
-    let drinks = ['Coke', 'Mtn Dew', 'Big Shot']; //This a list of data that is being changed
+let drinks = ['Coke', 'Mtn Dew', 'Big Shot']; //This a list of data that is being changed
+  function fizz(soda) { //function declaration
     drinks.push(soda); //adds the element to the end of the array
     console.log(drinks);
 }

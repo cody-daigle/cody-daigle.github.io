@@ -28,10 +28,12 @@
  *     Complex data types:
  *          Object: An 'Associative Array', list like structure that contains key/value pairs.
  *          Arrays: A list like structure that contains elements within it's indexs. TypeOf Operator logs array as an object.
- *          Functions: A statement, or set of statements, that performs a task or calculates a value.
  *          Date: An object that is multiple methods to manipulate calender dates.
  * 
- * 
+ *      Elephant in the room:
+ *          Functions: In JavaScript these are treated as a 'first-class-citizens'. This means that they can be store into variables
+ *          and passed to other functions as arguments, and returned from other functions as values. So they are merely a value and type of object. 
+ *          Functions are a statement, or set of statements, that performs a task or calculates a value.
  * 
  */
 

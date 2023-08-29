@@ -14,7 +14,7 @@
  * 
  */
 
-//if else statement
+//if else statement control
 
 let drink = 'water';
 if (drink === 'Coke') {
@@ -46,7 +46,7 @@ fizz('Pepsi');
 *      Some examples would be a for loop, for in loop, for of loop, etc
 * 
 */
-//for in loop to navigate through the object
+//for in loop control
 
 let snack = {
     crunch: 'Chips',

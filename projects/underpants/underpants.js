@@ -322,7 +322,7 @@ _.partition = function(array, func){
             falses.push(array[i])
         }
     }
-    
+
     return [[...trues], [...falses]]
 }
 
@@ -353,13 +353,23 @@ if(Array.isArray(list)){
         array.push(func(list[i], i, list));
         }
 
-    }else{
-        for(let key in list){
-            array.push(func(list[key], key, list));
+}else{
+    for(let key in list){
+        array.push(func(list[key], key, list));
         }
     }
     return array;
 }
+
+/*
+alex's solution
+
+_.map = function(collection, func){
+
+}
+
+*/
+
 
 
 /** _.pluck
@@ -411,7 +421,7 @@ _.every = function(list, func){
         if(func === undefined){ //edge case //so it can still iterate to find anything false
             //loop through array, then object
             for(let i = 0; i < list.length; i++){
-                //check if the element exists
+                //check if the element does not exists
                 if(!list[i]){ //takes care of #2 & #3
                     return false;
                 }

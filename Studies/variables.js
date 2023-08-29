@@ -18,7 +18,9 @@
  *      and must be declared before it can be used, but 'var' is function scoped, can be accessed throughout the function 
  *      and can be used before declared due to hoisting.
  * 
- * 5. Hoisting - 
+ * 5. Hoisting - Var declarations and function declarations are hoisted, or carried to the top of the program. Anything hoisted 
+ *      can be used after they are declared. Declarations are hoisted, not initializations.'Let' and 'const' do not get hoisted and 
+ *      are actually block scoped. The way I see it: Hoisting is just 'scope based movement'.
  */
 
 //assignment

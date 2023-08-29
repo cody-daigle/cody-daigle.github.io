@@ -9,8 +9,11 @@
  *  'undefined'. Complex data types are list-like structures/collections called Object and array. 
  * 
  * 1. Simple/Primitive Datatypes - Primitive data types define immutable values and can be tested 
- *         using the 'TypeOf' operator except 'null' and 'undefined'. These value are
- *         to a function by copy meaning
+ *         using the 'TypeOf' operator except 'null' and 'undefined'. These values are copy by value,
+ *         meaning the original primitive data type can not be altered in place, unless reassigned.
+ *         Complex data types define mutable values and cannot be tested with 'typeOf' due to complex
+ *         data types being recognized as objects to Javascript. These values are copy by reference,
+ *         meaning 
  * 
  *      Simple data types:
  *          Strings: Strings of text that are wrapped in quotes.
@@ -18,8 +21,11 @@
  *          Booleans: truthy or falsey values.
  *          Undefined: A non-writable, non-configurable property of the global scope.
  *          Null: A falsey value for booleans and it is the absence of an object value
- *          NaN:
  * 
+ *      Global Properties:
+ *          NaN: Global property value representing Not-A-Number.
+ *          Infinity: Global property, numeric value that represents infinity. infinity < any other number.
+ *          -Infinity: Attempted research, but no explaination, only that it is a thing. So I assume it is the inverse of infinity. -infinity < any other number.
  * 
  * 2. Complex - Defined as Objects, they are indentiers that reference values in memory.
  *          These datatypes are mutable and have no cap to how many key/values it can hold. Objects and Functions, which are

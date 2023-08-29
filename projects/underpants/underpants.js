@@ -432,7 +432,7 @@ _.every = function(list, func){
         if(func === undefined){ //edge case //so it can still iterate to find anything false
             //loop over object
             for(let key in list){
-                //check if key exists
+                ////check if func invoke is false anywhere
                 if(!list[key]){
                     //key does not exist
                     return false;
@@ -474,6 +474,56 @@ _.every = function(list, func){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+_.some = function(list, func){
+       //determine if array
+       if(Array.isArray(list)){
+        //check if func is even provided
+        if(func === undefined){ //edge case //so it can still iterate to find anything false
+            //loop through array, then object
+            for(let i = 0; i < list.length; i++){
+                //check if the element exists
+                if(list[i]){ //removed !
+                    return true; //changed to true
+                }
+            }
+            //else it is provided
+        }else{
+            for(let i = 0; i < list.length; i++){
+                //check if func invoke is true anywhere
+                if(func(list[i], i, list)){ //removed !
+                    //if it finds ANYTHING false
+                    return true; //changed to true
+                }
+            }
+        }
+        //else it's an object...
+    }else{
+        //check if provided
+        if(func === undefined){ //edge case //so it can still iterate to find anything false
+            //loop over object
+            for(let key in list){
+                ////check if func invoke is true anywhere
+                if(list[key]){ //removed !
+                    //key does not exist
+                    return true; //changed to true
+                }
+            }
+            //else it is provided
+        }else{
+            //iterate yet again...
+            for(let key in list){
+                //check if key exists
+                if(list[key]){  //removed !
+                    //does not
+                    return true; //change to true
+                }
+            }
+        }
+    }
+    //otherwise
+    return false; //changed to false
+}
 
 
 /** _.reduce

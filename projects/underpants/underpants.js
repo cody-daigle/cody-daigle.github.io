@@ -545,6 +545,30 @@ _.some = function(list, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed){
+    let result;
+    //check if seed is  not given
+    if(seed === undefined){
+        result = array[0];
+            //loop through array
+            for(let i = 1; i < array.length; i++){ //forgot the 1 for the initial item at index 0
+                //result is the callbackfn with it's previous value being the next iteration starting point
+                result = func(result, array[i], i, array);
+            }
+    //else it is given   
+    }else{
+        result = seed;
+            //loop through array with seed starting point
+            for(let i = 0; i < array.length; i++){
+                //result is the callback fn, (last element, element value, index, array)
+                result = func(result, array[i], i, array);
+            }
+        }
+        //return final value as result
+        return result
+    
+}
+
 
 /** _.extend
 * Arguments:
@@ -560,6 +584,14 @@ _.some = function(list, func){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(object1, object2, more){
+    //use blank parameter becuse the assign method can assign anything to its combined object
+    let copyObject1 = Object.assign(object1, object2, more);
+    
+    return copyObject1
+}
+//nice
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

@@ -404,6 +404,55 @@ _.pluck = function(array, prop){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(list, func){
+    //determine if array
+    if(Array.isArray(list)){
+        //check if func is even provided
+        if(func === undefined){ //edge case //so it can still iterate to find anything false
+            //loop through array, then object
+            for(let i = 0; i < list.length; i++){
+                //check if the element exists
+                if(!list[i]){ //takes care of #2 & #3
+                    return false;
+                }
+            }
+            //else it is provided
+        }else{
+            for(let i = 0; i < list.length; i++){
+                //check if func invoke is false anywhere
+                if(!func(list[i], i, list)){
+                    //if it finds ANYTHING false
+                    return false;
+                }
+            }
+        }
+        //else it's an object...
+    }else{
+        //check if provided
+        if(func === undefined){ //edge case //so it can still iterate to find anything false
+            //loop over object
+            for(let key in list){
+                //check if key exists
+                if(!list[key]){
+                    //key does not exist
+                    return false;
+                }
+            }
+            //else it is provided
+        }else{
+            //iterate yet again...
+            for(let key in list){
+                //check if key exists
+                if(!list[key]){
+                    //does not
+                    return false;
+                }
+            }
+        }
+    }
+    //otherwise
+    return true //christ
+}
 
 /** _.some
 * Arguments:

@@ -322,8 +322,8 @@ _.partition = function(array, func){
             falses.push(array[i])
         }
     }
-    let all = [];
-    return all.concat(falses, trues)
+    
+    return [[...trues], [...falses]]
 }
 
 
@@ -344,6 +344,24 @@ _.partition = function(array, func){
 */
 
 
+_.map = function(list, func){
+    //new array
+    let array = [];
+//loop through array
+if(Array.isArray(list)){
+    for(let i = 0; i < list.length; i++){
+        array.push(func(list[i], i, list));
+        }
+
+    }else{
+        for(let key in list){
+            array.push(func(list[key], key, list));
+        }
+    }
+    return array;
+}
+
+
 /** _.pluck
 * Arguments:
 *   1) An array of objects
@@ -355,7 +373,16 @@ _.partition = function(array, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
-
+_.pluck = function(array, prop){
+    //create empty array
+  //iterate through array first?
+   let items = array.map(obj => {
+    return obj[prop];
+   })
+   return items
+    
+    
+}
 /** _.every
 * Arguments:
 *   1) A collection

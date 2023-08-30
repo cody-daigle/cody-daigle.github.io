@@ -67,7 +67,7 @@ _.typeOf = function(value) {
    }else if(value instanceof Date){
     //log string of date
         return 'date';
-   }else if(typeof value === 'object' && typeof value !== null){
+   }else if(typeof value === 'object'){
         return 'object'
             //check for the simple types
    }else if(typeof value !== 'object'){

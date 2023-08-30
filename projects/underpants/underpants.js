@@ -575,8 +575,7 @@ _.reduce = function(array, func, seed){
             }
         }
         //return final value as result
-        return result
-    
+        return result;    
 }
 
 

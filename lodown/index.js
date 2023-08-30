@@ -136,9 +136,9 @@ module.exports.last = last;
  * indexOf: Iterates through an array in search of the first occurance of an element and returns that elements index.
  * Unless it doesn't exist in the array, it will return -1.
  * 
- * @param { Array } Takes in an array of which the index is needed
+ * @param { Array } Takes in an array of which the index is needed.
  * @param { Value } Function takes a element value to be searched for.
- * @returns { Index } Function returns the index of the search item's first occurance. Returns -1 if element is not in the array
+ * @returns { Index or -1 } Function returns the index of the search item's first occurance. Returns -1 if element is not in the array.
  */
 
 function indexOf(array, value){
@@ -153,11 +153,11 @@ function indexOf(array, value){
 module.exports.indexOf = indexOf;
 
 /**
- * contains:
+ * contains: Takes in an array and a value and checks the array elements if it contains the value.
  * 
- * @param {*} array 
- * @param {*} value 
- * @returns 
+ * @param { Array } Takes in an array to iterate through.
+ * @param { value } Function takes in a value input and checks through the array for that value
+ * @returns { Boolean } Function returns true if the input value was in the array and false if it is not in the array.
  */
 
 function contains(array, value){

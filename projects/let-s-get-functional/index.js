@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require('underbar');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,22 +16,64 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER/projects/let-s-get-functional
+ *    npm start --prefix ./cody-daigle.github.io/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
 var maleCount = function(array) {
-
+    //get all male customers and return the amount
+    let males = array.filter((customer => {
+        return customer.gender === 'male'
+    }));
+    return males.length
 };
 
-var femaleCount;
+var femaleCount = function(array){//output is a number
+    return array.reduce((acc, curr) =>{
+        if(curr.gender === 'female'){
+         acc += 1 //if finds female increment the number
+        }
+        return acc
+    }, 0)
+};
 
-var oldestCustomer;
+var oldestCustomer = function(array){
+    //reduce to return oldest customer obj in array
+    let old = array.reduce((acc, curr) =>{
+        //if acc is younger than curr person then make acc that 
+        if(acc.age < curr.age){
+            //the acc is now the previous curr
+            acc = curr;
+        }
+        return acc
+    })
+    //no seed
+    //return cust name
+    return old.name
+};
 
-var youngestCustomer;
+var youngestCustomer = function(array){
+    //reduce to return oldest customer obj in array
+    let old = array.reduce((acc, curr) =>{
+        //if acc is younger than curr person then make acc that 
+        if(acc.age > curr.age){
+            //the acc is now the previous curr
+            acc = curr;
+        }
+        return acc
+    })
+    //no seed
+    //return cust name
+    return old.name
+};
 
-var averageBalance;
+var averageBalance = function(array){ //outputs a number
+    let avg = array.reduce((acc, curr) =>{
+        acc += curr.balance
+    }, 0)
+    return parseInt(avg) / customers.length
+};
 
 var firstLetterCount;
 

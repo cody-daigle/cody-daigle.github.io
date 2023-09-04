@@ -54,9 +54,9 @@ var oldestCustomer = function(array){
 };
 
 var youngestCustomer = function(array){
-    //reduce to return oldest customer obj in array
-    let old = array.reduce((acc, curr) =>{
-        //if acc is younger than curr person then make acc that 
+    //reduce to return youngblood customer obj in array
+    let baby = array.reduce((acc, curr) =>{
+        //if acc is older than curr person then make acc that 
         if(acc.age > curr.age){
             //the acc is now the previous curr
             acc = curr;
@@ -65,17 +65,39 @@ var youngestCustomer = function(array){
     })
     //no seed
     //return cust name
-    return old.name
+    return baby.name
 };
 
 var averageBalance = function(array){ //outputs a number
-    let avg = array.reduce((acc, curr) =>{
-        acc += curr.balance
-    }, 0)
-    return parseInt(avg) / customers.length
-};
+    //remove symbol
+     let num = array.map(ele => ele.balance.replace(/['$', ',']/g, ''));
+    //parse into float
+    let parse = num.map(x => parseFloat(x));
+     //console.log(parse)
+    //reduce to one number
+    let avg = parse.reduce((acc, curr) => {
+      acc += curr
+      return acc
+    })
+      //divide by amount of people
+    return avg / array.length
+  };
 
-var firstLetterCount;
+  var firstLetterCount = function(array, letter){
+    //list of all the customers names
+  let names = array.map(ele => ele.name);
+  console.log(names);
+  let filtered = names.filter(person => {
+    if(person.charAt().toUpperCase() === letter || person.charAt().toLowerCase() === letter){
+      return true;
+    }else{
+      return false;
+    }
+ 
+  })
+  return filtered.length
+  
+};
 
 var friendFirstLetterCount;
 

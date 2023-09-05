@@ -166,10 +166,10 @@ function contains(array, value){
 module.exports.contains = contains;
 
 /**
- * unique:
+ * unique: This function takes in an array and checks for unique characters. If there are duplicates they are removed.
  * 
- * @param {*} array 
- * @returns 
+ * @param { Array } Function takes in an array
+ * @returns { Array } Function returns a new array with any duplicates removed
  */
 
 function unique(array){
@@ -178,11 +178,11 @@ function unique(array){
 module.exports.unique = unique;
 
 /**
- * filter:
+ * filter: Filter takes in an array and calls it's call back function for each item within the array, to perform a specific action.
  * 
- * @param {*} array 
- * @param {*} func 
- * @returns 
+ * @param { Array } Function takes in an array to iterate through
+ * @param { Function } Function takes in a callback function to perform an action on each iteration
+ * @returns { Array } Returns a new array with the items from the original array that passed the callback functions condition
  */
 
 function filter(array, func){
@@ -200,10 +200,11 @@ function filter(array, func){
 module.exports.filter = filter;
 
 /**
- * reject:
+ * reject: Inverse of Filter. Takes in an array and calls the callback function for each item within the array, and those that do not meet the condition
+ * will be added to a new array
  * 
- * @param {*} array 
- * @param {*} func 
+ * @param { Array } Takes in an array
+ * @param { Function } Takes in a callback function to perform an action on each iteration
  * @returns 
  */
 
@@ -221,11 +222,12 @@ function reject(array, func){
 module.exports.reject = reject;
 
 /**
- * partition:
+ * partition: This function takes in an array and a callback function. The callback function is invoked on each iteration to determine 
+ * if the element is truthy or falsey. All elements will be divided into a truthy array and a falsey array, within an array
  * 
- * @param {*} array 
- * @param {*} func 
- * @returns 
+ * @param { Array }  Function takes in an array to iterate through
+ * @param { Function } Funtion takes in a callback function and is invoked on each element to determine if element is truthy or falsey
+ * @returns { Nested Array } Returns a nested array with two arrays. Truthy elements in one array index and the falsey array in the other.
  */
 
 function partition(array, func){
@@ -246,11 +248,11 @@ module.exports.partition = partition;
 
 
 /**
- * pluck:
+ * pluck: Takes in an array and 
  * 
- * @param {*} array 
- * @param {*} prop 
- * @returns 
+ * @param { Array } Function takes in an array to iterate through.
+ * @param { Property } Function takes in a property value
+ * @returns { Array } Returns an array with either the prop value updated if it exists. If it does not exist then the property value is added.
  */
 
 function pluck(array, prop){
@@ -266,11 +268,12 @@ function pluck(array, prop){
 module.exports.pluck = pluck;
 
 /**
- * every:
+ * every: Every takes in an array or an object and iterates through each element testing if 'every' item is truthy. 
+ * If even one item is falsey then false is returned
  * 
- * @param {*} list 
- * @param {*} func 
- * @returns 
+ * @param { Array or Object } Funtion takes in an array or an object.
+ * @param { Function } Function takes in a callback function that is invoked on each iteration
+ * @returns { Boolean } Returns a boolean depending on whether each element was truthy or not.
  */
 
 function every(list, func){
@@ -325,11 +328,12 @@ function every(list, func){
 module.exports.every = every;
 
 /**
- * some:
+ * some: Inverse of Every. Takes in an array or object to iterate through each element, testing if at least
+ * one element in the collection is truthy.
  * 
- * @param {*} list 
- * @param {*} func 
- * @returns 
+ * @param { Array or Object } Function takes in an array or an object to iterate through 
+ * @param { Function } Callback function checks each element in the array for a truthy element.
+ * @returns { Boolean } Returns a boolean value based off whether a truthy element was found or not.
  */
 
 function some(list, func){
@@ -386,9 +390,9 @@ module.exports.some = some;
 /**
  * reduce:
  * 
- * @param {*} array 
- * @param {*} func 
- * @param {*} seed 
+ * @param { Array } 
+ * @param { Function } 
+ * @param { Seed } 
  * @returns 
  */
 
@@ -413,8 +417,8 @@ module.exports.reduce = reduce;
 /**
  * extend:
  * 
- * @param {*} object1 
- * @param {*} object2 
+ * @param { Object } object1 
+ * @param { Object } object2 
  * @param {*} more 
  * @returns 
  */

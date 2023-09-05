@@ -87,7 +87,7 @@ var averageBalance = function(array){ //outputs a number
     //list of all the customers names
   let names = array.map(ele => ele.name);
   console.log(names);
-  let filtered = names.filter(person => {
+  let filtered = names.filter(person => {//needs to evaluate a condition
     if(person.charAt().toUpperCase() === letter || person.charAt().toLowerCase() === letter){
       return true;
     }else{
@@ -99,7 +99,9 @@ var averageBalance = function(array){ //outputs a number
   
 };
 
-var friendFirstLetterCount;
+//Find how many friends of a given customer have names that start with a given letter
+var friendFirstLetterCount = function(array, customer, letter){ //output a number
+};
 
 var friendsCount;
 

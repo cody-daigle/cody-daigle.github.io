@@ -27,7 +27,9 @@
  *      strictly equals => '==='
  * 
  *     example:
- *         **Put example here**
+ *         if(1 < 2) return true; //<- 1 is less than 2;
+ *         if(2 > 1) return true; //<- 2 is greater than 1;
+ *          1 !== 0; //<- 1 is NOT equal to 0
  * 
  *  -Arithmetic => Takes two numerical operands and returns a single numerical value
  *      add => '+'
@@ -39,7 +41,8 @@
  *      decrement => '--'
  * 
  *      example:
- *          **Put example here**
+ *          let one = 2 - 1;
+ *              console.log(one); //<- 2 will decrement by 1.
  * 
  *  -Logical => Used with logical values to return a boolean or a value of the operand
  *      bang => '!'
@@ -47,8 +50,8 @@
  *      AND => '&&'
  * 
  *       example:
- *          **Put example here**
- * 
+ *           1 !== 0; //<- 1 is NOT equal to 0
+ *                  console.log(one);
  *  -Unary => Operators that take in a single operand and perform all the operations on that single operand
  *      delete
  *      typeof

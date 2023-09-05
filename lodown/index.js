@@ -144,9 +144,9 @@ module.exports.last = last;
 function indexOf(array, value){
     for(let i = 0; i < array.length; i++){
         if(!array.includes(value)){
-            return -1
+            return -1;
         }else if(array[i] === value){
-            return i
+            return i;
         }
     }
 }
@@ -186,11 +186,8 @@ module.exports.unique = unique;
  */
 
 function filter(array, func){
-    //create array to store
     let filtered = [];
-    //loop array
     for(let i = 0; i < array.length; i++){
-        // is statement
     if(func(array[i], i, array)){ 
         filtered.push(array[i]);
         }
@@ -210,9 +207,7 @@ module.exports.filter = filter;
 
 function reject(array, func){
     let rejected = [];
-    //loop array
     for(let i = 0; i < array.length; i++){
-        // is statement
     if(func(array[i], i, array) === false){ 
         rejected.push(array[i]);
         }
@@ -233,7 +228,6 @@ module.exports.reject = reject;
 function partition(array, func){
     let trues = [];
     let falses = [];
-    //loop array
     for(let i = 0; i < array.length; i++){
         if(func(array[i], i, array)){
             trues.push(array[i]);
@@ -248,7 +242,7 @@ module.exports.partition = partition;
 
 
 /**
- * pluck: Takes in an array and 
+ * pluck: Takes in an array of objects and interates through every element and returns an array with all the properties
  * 
  * @param { Array } Function takes in an array to iterate through.
  * @param { Property } Function takes in a property value
@@ -256,8 +250,6 @@ module.exports.partition = partition;
  */
 
 function pluck(array, prop){
-    //create empty array
-  //iterate through array first?
    let items = array.map(obj => {
     return obj[prop];
    })
@@ -277,53 +269,37 @@ module.exports.pluck = pluck;
  */
 
 function every(list, func){
-    //determine if array
-    if(Array.isArray(list)){
-        //check if func is even provided
-        if(func === undefined){ //edge case //so it can still iterate to find anything false
-            //loop through array, then object
-            for(let i = 0; i < list.length; i++){
-                //check if the element does not exists
+        if(Array.isArray(list)){        
+        if(func === undefined){             
+            for(let i = 0; i < list.length; i++){               
                 if(!list[i]){
                     return false;
                 }
-            }
-            //else it is provided
+            }           
         }else{
-            for(let i = 0; i < list.length; i++){
-                //check if func invoke is false anywhere
-                if(!func(list[i], i, list)){
-                    //if it finds ANYTHING false
+            for(let i = 0; i < list.length; i++){                
+                if(!func(list[i], i, list)){                    
                     return false;
                 }
             }
-        }
-        //else it's an object...
-    }else{
-        //check if provided
-        if(func === undefined){ //edge case //so it can still iterate to find anything false
-            //loop over object
-            for(let key in list){
-                ////check if func invoke is false anywhere
-                if(!list[key]){
-                    //key does not exist
+        }    
+    }else{        
+        if(func === undefined){             
+            for(let key in list){                
+                if(!list[key]){                    
                     return false;
                 }
-            }
-            //else it is provided
-        }else{
-            //iterate yet again...
-            for(let key in list){
-                //check if key exists
-                if(!list[key]){
-                    //does not
+            }            
+        }else{            
+            for(let key in list){                
+                if(!list[key]){                    
                     return false;
                 }
             }
         }
     }
-    //otherwise
-    return true //christ
+    
+    return true 
 }
 module.exports.every = every;
 
@@ -337,63 +313,48 @@ module.exports.every = every;
  */
 
 function some(list, func){
-       //determine if array
-       if(Array.isArray(list)){
-        //check if func is even provided
-        if(func === undefined){ //edge case //so it can still iterate to find anything false
-            //loop through array, then object
-            for(let i = 0; i < list.length; i++){
-                //check if the element exists
-                if(list[i]){ //removed !
-                    return true; //changed to true
+       if(Array.isArray(list)){       
+        if(func === undefined){           
+            for(let i = 0; i < list.length; i++){                
+                if(list[i]){ 
+                    return true; 
                 }
-            }
-            //else it is provided
+            }            
         }else{
-            for(let i = 0; i < list.length; i++){
-                //check if func invoke is true anywhere
-                if(func(list[i], i, list)){ //removed !
-                    //if it finds ANYTHING false
-                    return true; //changed to true
+            for(let i = 0; i < list.length; i++){                
+                if(func(list[i], i, list)){                     
+                    return true; 
                 }
             }
         }
-        //else it's an object...
     }else{
-        //check if provided
-        if(func === undefined){ //edge case //so it can still iterate to find anything false
-            //loop over object
+        if(func === undefined){
             for(let key in list){
-                ////check if func invoke is true anywhere
-                if(list[key]){ //removed !
-                    //key does not exist
-                    return true; //changed to true
+                if(list[key]){ 
+                    return true; 
                 }
             }
-            //else it is provided
         }else{
-            //iterate yet again...
             for(let key in list){
-                //check if key exists
-                if(list[key]){  //removed !
-                    //does not
-                    return true; //change to true
+                if(list[key]){ 
+                    return true; 
                 }
             }
         }
     }
-    //otherwise
-    return false; //changed to false
+    return false;
 }
 module.exports.some = some;
 
 /**
- * reduce:
+ * reduce: The reduce function will iterate through the array and combine all the elements into a singular element, beginning 
+ *          with the seed value, if provided.
  * 
- * @param { Array } 
- * @param { Function } 
- * @param { Seed } 
- * @returns 
+ * @param { Array } Function takes in an array
+ * @param { Function } Callback that is called on each item, starting at seed if given, and accumulates values one by one
+ * @param { Seed } Seed is the starting point the iteration begins reducing
+ * @returns { Mulitple Types } This function will iterate through arrays or even numbers. The callback function is called on each
+ *                              element, starting at the seed, and it accumulates until the loop is complete and returns a single value
  */
 
 function reduce(array, func, seed){
@@ -415,19 +376,18 @@ function reduce(array, func, seed){
 module.exports.reduce = reduce;
 
 /**
- * extend:
+ * extend: Extend creates a copy object, so the original is not mutated, and combines all subsequent objects that may or may not be passed in.
  * 
- * @param { Object } object1 
- * @param { Object } object2 
- * @param {*} more 
- * @returns 
+ * @param { Object } Function takes in an object
+ * @param { Object } Function takes in an object
+ * @param { Continued } Potentially more objects as parameters.
+ * @returns { Object } Returns a copy of the object and adds all subsequent objects that is passed in.
  */
 
 _.extend = function(object1, object2, more){
     let copyObject1 = Object.assign(object1, object2, more);
         return copyObject1
 }
-//nice
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

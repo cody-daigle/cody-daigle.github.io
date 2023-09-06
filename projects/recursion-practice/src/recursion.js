@@ -393,29 +393,25 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
-  //base
-  if (!str.length) {
-      return obj;
-  }
-  // recursion
-
+var letterTally = function(str, obj = {}) {
+  if (!str.length) return obj;
+  if (obj[str[0]] === undefined) obj[str[0]] = 1;
+  else
+  obj[str[0]] += 1;
   
-  return letterTally(str, obj);
+  return letterTally(str.slice(1), obj);
 };
+
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
 // elements they should be replaced with a single copy of the element. The order of the
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function(list) {
-  //base
-  if(a){
-
-  }
-  //recursion
-  return
+var compress = function(list, arr=[]) {
+  if (!list.length) return arr.reverse();
+  if (list[0] !== arr[0]) arr.unshift(list[0])
+  return compress(list.slice(1), arr);
 };
 
 // 32. Augment every element in a list with a new value where each element is an array
@@ -427,26 +423,24 @@ var augmentElements = function(array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {
-  //base
-  if(a){
-
-  }
-  //recursion
-  return
+var minimizeZeroes = function(array, arr=[]) {
+  if (!array.length) return arr.reverse();
+  if (array[0] !== arr[0]) arr.unshift(array[0]);
+  return minimizeZeroes(array.slice(1), arr);
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
+var alternateSign = function(array, def=[]) {
   //base
-  if(a){
+  if(!array.length) return def;
+  if(array[0] > 0) def.push(array[0])
 
-  }
   //recursion
-  return
+
+  return alternateSign(array, def)
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.

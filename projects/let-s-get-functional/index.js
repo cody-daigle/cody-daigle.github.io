@@ -100,7 +100,25 @@ var averageBalance = function(array){ //outputs a number
 };
 
 //Find how many friends of a given customer have names that start with a given letter
-var friendFirstLetterCount = function(array, customer, letter){ //output a number
+var friendFirstLetterCount = function(array, customer, letter){
+  //iterate through customer array for every customer
+  let patron = array.filter(person => {
+    //check if customer input exists
+    if(customer === person.name ){
+      //if it does turn that object.friends into an iterable
+      let pal = Object.values(person.friends);
+      //console.log(pal)
+      let pals = pal.filter(dude => dude.name)
+      //console.log(pals)
+      return pals.filter(cust => {
+        if(cust.charAt().toUpperCase() === letter){
+          console.log(cust)
+          return cust
+        }
+      })
+    }
+  })
+return patron.length
 };
 
 var friendsCount;

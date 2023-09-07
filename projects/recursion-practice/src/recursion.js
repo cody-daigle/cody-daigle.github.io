@@ -187,14 +187,21 @@ var modulo = function(x, y) {//OPTIONAL
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
-var multiply = function(x, y) {  
-     
-      if(y === 0){
-        return 0;
-      }      
-        return multiply(x += x, y - 1);    
-      
-     
+var multiply = function(x, y) {
+  let pos = false;
+  if(y === 0 || x === 0){
+    return 0;
+  }
+  if(x < 0) {
+    pos = !pos;
+    x = -x;
+  }
+  if(y < 0) {
+    pos = !pos;
+    y = -y;
+  }
+  let result = multiply(x, y - 1) + x
+  return pos ? -result : result;
 };
 //negatives?
 
@@ -365,13 +372,13 @@ var capitalizeWords = function(input, array=[]) {
 var capitalizeFirst = function(array, map=[]) {
   //base
   if(!array.length){
-    return map
+    return map;
   }
   //recursion
   let first = array[0].charAt().toUpperCase();
   let rest = array[0].slice(1).toLowerCase();
   map.push(first + rest)
-  return capitalizeFirst(array.slice(1), map)
+  return capitalizeFirst(array.slice(1), map);
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -410,7 +417,7 @@ var letterTally = function(str, obj = {}) {
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
 var compress = function(list, arr=[]) {
   if (!list.length) return arr.reverse();
-  if (list[0] !== arr[0]) arr.unshift(list[0])
+  if (list[0] !== arr[0]) arr.unshift(list[0]);
   return compress(list.slice(1), arr);
 };
 
@@ -435,23 +442,46 @@ var minimizeZeroes = function(array, arr=[]) {
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array, def=[]) {
   //base
-  if(!array.length) return def;
-  if(array[0] > 0) def.push(array[0])
-
-  //recursion
-
-  return alternateSign(array, def)
+  let long = array.length;
+  if (!array.length) return def;
+  if (long % 2 === 0) {
+    if (array[long-1] > 0) array[long-1] = -array[long-1]; 
+  } else 
+    if (array[long-1] < 0) array[long-1] = -array[long-1];
+  def.unshift(array[long-1]);
+  return alternateSign(array.slice(0, long-1), def);
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
-  //base
-  if(a){
-
+var numToText = function(str, def='') {
+  let word = str[str.length - 1]
+  if (str.length === 0) return def;
+  var blank;
+  switch (word) {
+    case '1': blank = 'one';
+      break;
+    case '2': blank = 'two';
+      break;
+    case '3': blank = 'three';
+      break;
+    case '4': blank = 'four';
+      break;
+    case '5': blank = 'five';
+      break;
+    case '6': blank = 'six';
+      break;
+    case '7': blank = 'seven';
+      break;
+    case '8': blank = 'eight';
+      break;
+    case '9': blank = 'nine';
+      break;
+    default: blank = word;
+      break;
   }
-  //recursion
+ return numToText(str.slice(0, str.length-1), def) + blank;
 };
 
 // *** EXTRA CREDIT ***

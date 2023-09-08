@@ -100,32 +100,32 @@ var averageBalance = function(array){ //outputs a number
 };
 
 //Find how many friends of a given customer have names that start with a given letter
-var friendFirstLetterCount = function(array, customer, letter){
+var friendFirstLetterCount = function(array, customer, letter){ //output length
   //iterate through customer array for every customer
-  let patron = array.filter(person => {
-    //check if customer input exists
-    if(customer === person.name ){
-      //if it does turn that object.friends into an iterable
-      let pal = Object.values(person.friends);
-      //console.log(pal)
-      let pals = pal.filter(dude => dude.name)
-      //console.log(pals)
-      return pals.filter(cust => {
-        if(cust.charAt().toUpperCase() === letter){
-          console.log(cust)
-          return cust
-        }
-      })
-    }
-  })
-return patron.length
+  let patron = array.filter(person => customer === person.name)[0]
+  return patron.friends.filter(friend => 
+    friend.name.charAt() === letter.toUpperCase()).length
+
+};;
+//Find the customers' names that have a given customer's name in their friends list
+var friendsCount = function(array, name){//ouput array
+};
+var topThreeTags = function(){
+
 };
 
-var friendsCount;
+var genderCount = function(array){
+  let genders = array.reduce((acc, curr) => {
+if(acc[curr.gender] === undefined){
+  acc[curr.gender] = 1;
+} else{
+  acc[curr.gender]++;
+}
+return acc;
+}, {})
+return genders
+}
 
-var topThreeTags;
-
-var genderCount;
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

@@ -108,10 +108,41 @@ var friendFirstLetterCount = function(array, customer, letter){ //output length
 
 };;
 //Find the customers' names that have a given customer's name in their friends list
-var friendsCount = function(array, name){//ouput array
-};
-var topThreeTags = function(){
-
+var friendsCount = function(array, name){ //output is an array
+  //output array
+  let output = [];
+  //each object array[i]
+for(let i = 0; i < array.length; i++){
+  //each object in friends array
+  for(let j = 0; j < array[i].friends.length; j++){
+    if(array[i].friends[j].name === name){
+      output.push(array[i].name);
+    }
+  }
+}
+return output;
+}
+var topThreeTags = function(array){ // output is an array
+  let allTags = array.reduce((acc, curr) =>{
+    for(let i = 0; i < curr.tags.length; i++){
+    if(acc[curr.tags[i]] === undefined){
+      acc[curr.tags[i]] = 1;
+    }else{
+      acc[curr.tags[i]] += 1;
+    } 
+  }
+    return acc
+  }, [])
+  let arrs = Object.entries(allTags);
+  let final = arrs.sort((one, two) =>{
+   return  two[1] - one[1];
+  })
+let top = final.slice(0, 3).flat();
+  return top.filter(tag => {
+    if(typeof(tag) !== typeof(3)){
+      return tag
+    }
+  })
 };
 
 var genderCount = function(array){

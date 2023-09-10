@@ -2,8 +2,21 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
+function range(start, end) {
+  //output array of numbers
+  let output = [];
+if(start < end){
+  for(let i = start; i <= end; i++){
+    output.push(i)
+  }
+  return output;
+}
+  if(start > end){
+    for(let i = start; i >= end; i--){
+      output.push(i)
+    }
+  }
+  return output;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

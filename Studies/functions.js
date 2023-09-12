@@ -12,24 +12,26 @@
  * 
  *  There are two steps when it comes to using functions:
  *  First, you need to create a function definition or function expression.
- */ let multiply = function(x, y){return x * y} 
-    console.log(multiply(7, 4))
- /*  Next, the function can be executed by calling, or invoking, it.
- *  Execute, Call, and Invoke mean the same in regards to the function. So, dealer's choice on the verbage.
- * 
+ *  Next, the function can be executed by calling, or invoking, it.
+ */   let multiply = function(x, y){ //<- Function expression
+        return x * y} 
+ /* Execute, Call, and Invoke mean the same in regards to the function. So, dealer's choice on the verbage.
+ */  console.log(multiply(7, 4)) //logging the invokation of multiply
+ /*
  * 2. Differences:
  * 
- * -Parameters: These are the names attached to the function's definition.
- *  function par(para1, para2) //<- this function has two paramters named para1 & para2.
- * -Arguments: These are the values passed to the function that initialize the parameters.
- *  par(arg1, arg2) //<- invoking par with arg1 & arg2 as the arguments
- * 
+ *  -Parameters: These are the names attached to the function's definition.
+ */   let person = function(name, age){ //<- this function has two paramters named name & age.
+        return `${name} is ${age} years old`} 
+ /* -Arguments: These are the values passed to the function that initialize the parameters.
+ */     console.log(person('Cody', 32)) //'cody' is the argument for name and 32 is the argument for age
+ /* 
  * 3. Named Function Syntax:
  * 
- *  Providing a name allows it to refer to itself and be identified
- * 
- * function par(para1, para2){ //<- the name of the function is 'par'
- * 
+ *  Providing a name allows it to refer to itself, be identified, and allow it to be hoisted. 
+ */   function add(x, y){return x + y} //<- this function is declared with the name directly
+        console.log(add(14, 14)) //logging the invocation of add()
+ /* 
  * }
  * par(arg1, arg2) //<- Syntax for the invokation, call
  * 

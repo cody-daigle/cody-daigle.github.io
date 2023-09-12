@@ -15,12 +15,12 @@ function range(start, end, step){
       }
     }
   }else{
-    if(step < 0){
-      for(let i = start; i >= end; i += step){
+    if(step > 0){
+      for(let i = start; i <= end; i += step){
         output.push(i);
       }
     }else{
-      for(let i = start; i <= end; i += step){
+      for(let i = start; i >= end; i += step){
         output.push(i);
       }
     }
@@ -136,8 +136,22 @@ function nth(list, n) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-//go over in class. Nightmare
+function deepEqual(a, b) {
+  if(a === b) return true;
+  
+  if(a === null || typeof a !== "object" || b == null || typeof b !== "object"){
+    return false;
+  }
+
+  let keysA = Object.keys(a), keysB = Object.keys(b);
+
+  if(keysA.length != keysB.length) return false;
+
+  for(let key of keysA){
+    if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false;
+  }
+
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

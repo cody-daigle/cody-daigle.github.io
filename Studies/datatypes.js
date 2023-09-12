@@ -15,33 +15,49 @@
  *         data types being recognized as objects to Javascript. These values are copy by reference,
  *         meaning 
  * 
- *      Simple data types:
- *          Strings: Strings of text that are wrapped in quotes.
- *          Numbers: 0-9. Values that are stored as decimal numbers. 
- *          Booleans: truthy or falsey values.
- *          Undefined: A non-writable, non-configurable property of the global scope.
- *          Null: A falsey value for booleans and it is the absence of an object value
- * 
+ /*      Simple data types:
+ /*          Strings: Strings of text that are wrapped in quotes.
+ */      console.log('Cody Daigle');
+ /*          Numbers: 0-9. Values that are stored as integers.
+ */      console.log([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+ /*          Booleans: truthy or falsey values.
+ */      console.log(1 < 2 ? true : false);
+ /*          Undefined: A non-writable, non-configurable property of the global scope.
+ */      console.log(undefined);
+ /*          Null: A falsey value for booleans and it is the absence of an object value
+ */      console.log(null);
+ /* 
  *      Global Properties:
- *          NaN: Global property value representing Not-A-Number.
- *          Infinity: Global property, numeric value that represents infinity. infinity < any other number.
- *          -Infinity: Attempted research, but no explaination, only that it is a thing. So I assume it is the inverse of infinity. -infinity < any other number.
- * 
+ /*          NaN: Global property value representing Not-A-Number.
+ */      console.log(NaN);
+ /*          Infinity: Global property, numeric value that represents infinity. Infinity > any other number.
+ */      console.log(Infinity);
+ /*          -Infinity: Global property, numeric value that represents negative Infinity. -Infinity < any other number.
+ */      console.log(-Infinity);
+ /* 
  * 2. Complex - Defined as Objects, they are indentiers that reference values in memory.
  *          These datatypes are mutable and have no cap to how many key/values it can hold. Objects and Functions, which are
  *          also defined as objects, can be invoked.
  * 
  *     Complex data types:
  *          Object: An 'Associative Array', list like structure that contains key/value pairs.
- *          Arrays: A list like structure that contains elements within it's indexs. TypeOf Operator logs array as an object.
- *          Date: An object that is multiple methods to manipulate calender dates.
- * 
- *      Elephant in the room:
+ */    let me = { nameFirst: 'Cody', age: 32, DreamOccupation: 'Software Developer', isDeveloper: false };
+        console.log(me);    
+ /*          Arrays: A list like structure that contains elements within it's indexs. TypeOf Operator logs array as an object.
+ */    let hobbies = ['Disc Golf', 'Cooking', 'Coding', 'Daddin'];
+ /*          Date: An object that is multiple methods to manipulate calender dates.
+ */    let today = Date();
+        console.log(today);
+ /*      Elephant in the room:
  *          Functions: In JavaScript these are treated as a 'first-class-citizens'. This means that they can be store into variables
  *          and passed to other functions as arguments, and returned from other functions as values. So they are merely a value and type of object. 
  *          Functions are a statement, or set of statements, that performs a task or calculates a value.
- * 
- */
+ */    let multiply = function(x, y){return x * y};
+        console.log(multiply(7, 4)); //logs 28 to console
+          
+
+
+        //EXAMPLES OF DATATYPES//
 
 var obj = { //complex
     number: 1, //simple

@@ -36,7 +36,7 @@ console.log(drink); //<-- Will log 'Hydration Nectar' to the console.
 function fizz(soda) {
     let drinks = ['Coke', 'Mtn Dew', 'Big Shot']; //This a list of data that is being changed
     drinks.push(soda); //adds the element to the end of the array
-    console.log(drinks);
+    console.log(drinks); //<-- Will log ['Coke', 'Mtn Dew', 'Big Shot', 'Pepsi'] to the console.
 }
 fizz('Pepsi');
 

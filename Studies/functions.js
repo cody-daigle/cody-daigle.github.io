@@ -12,7 +12,9 @@
  * 
  *  There are two steps when it comes to using functions:
  *  First, you need to create a function definition or function expression.
- *  Next, the function can be executed by calling, or invoking, it.
+ */ let multiply = function(x, y){return x * y} 
+    console.log(multiply(7, 4))
+ /*  Next, the function can be executed by calling, or invoking, it.
  *  Execute, Call, and Invoke mean the same in regards to the function. So, dealer's choice on the verbage.
  * 
  * 2. Differences:

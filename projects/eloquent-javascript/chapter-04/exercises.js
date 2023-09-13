@@ -9,7 +9,7 @@ function range(start, end, step){
     for(let i = start; i <= end; i++){
       output.push(i)
       }
-    }else{
+    }else if(start > end){
       for(let i = start; i >= end; i--){
         output.push(i)
       }
@@ -136,23 +136,36 @@ function nth(list, n) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(a, b) {
-  if(a === b) return true;
-  
-  if(a === null || typeof a !== "object" || b == null || typeof b !== "object"){
-    return false;
+function deepEqual(x, y) {
+  //determine if x and y are NOT objects
+  if(typeof x !== 'object' && typeof y !== 'object') return x === y;
+    //determine if x OR y is not an object
+    if(typeof x !== 'object' || typeof y !== 'object') return false;
+  //create arrays each inputs keys;
+  let xKeys = Object.keys(x); //['a']
+  let yKeys = Object.keys(y); //['a']
+  if(xKeys.length !== yKeys.length) return false;
+  //iterate to determine if array keys match and values at keys match
+    for(let i = 0; i < xKeys.length; i++){
+    //determine if current ket is not included in yKeys
+    if(!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) return false;
   }
-
-  let keysA = Object.keys(a), keysB = Object.keys(b);
-
-  if(keysA.length != keysB.length) return false;
-
-  for(let key of keysA){
-    if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false;
-  }
-
   return true;
-}
+};
+// deepEqual({x: 1},  'x')
+
+//   if(x === y) return true; 
+//   if(x === null || typeof x !== "object" || y == null || typeof y !== "object"){
+//     return false;
+//   }
+//   let keysX = Oyject.keys(x);
+//   let keysY = Oyject.keys(y);
+//   if(keysX.length != keysY.length) return false;
+//   for(let key of keysX){
+//     if (!keysY.includes(key) || !deepEqual(x[key], y[key])) return false;
+//   }
+//   return true;
+// }
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////

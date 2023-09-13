@@ -19,13 +19,12 @@
 let drink = 'water';
 if (drink === 'Coke') {
     console.log('Invented by a pharmacist'); //the condition was not met so this is not logged
-} else if (drink === 'water') {
+} else if (drink === 'water') { //the first condition was false so the next in line is the else-if
     console.log('Hydration Nectar'); //will be the ending result because 'water' is equal to drink
 }
 console.log(drink); //<-- Will log 'Hydration Nectar' to the console.
 
 /**
- *
  * 2. Functions: A piece of code that can be summoned by other code, a variable, or even itself(yikes). These snippets contain arguments, or 'seats', 
  *      that are passed into the function so that it may return a value. The function name's scope is dependant on whether if the name is a declaration or
  *      an expression. console.log() is a common function we utilize to print to the console
@@ -57,3 +56,34 @@ for (let key in snack) {
     console.log(key) //<-- Will log the keys crunch, soft, chewy to console.
     console.log(snack[key]) //<-- Will log the values Chips, Cookies, Gummies to the console
 }
+
+//switch statement
+
+function weekday(day){
+    let count;
+  switch(day){
+      case 1: day = 'Sunday';
+        count = 1 //increment
+        break;
+      case 2: day = 'Monday';
+       count = 2
+        break;
+      case 3: day = 'Tuesday';
+       count = 3
+        break;
+      case 4: day = 'Wednesday';
+       count = 4
+        break;
+      case 5: day = 'Thursday';
+       count = 5
+        break;
+      case 6: day = 'Friday';
+       count = 6
+        break;
+      case 7: day = 'Saturday';
+       count = 7
+    default: `Welcome to the Matrix`
+  }
+    console.log(`${day} is day ${count} in the week!`) 
+  }
+   console.log(weekday(2))//<- logs invokation and prints `Monday is day 2 in the week!`

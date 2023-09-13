@@ -30,32 +30,21 @@
  * 
  *  Providing a name allows it to refer to itself, be identified, and allow it to be hoisted. 
  */   function add(x, y){return x + y} //<- this function is declared with the name directly
-        console.log(add(14, 14)) //logging the invocation of add()
- /* 
- * }
- * par(arg1, arg2) //<- Syntax for the invokation, call
- * 
- * par = function(para1, para2){ 
- * 
- * }
- *
- * 
+      console.log(add(14, 14)) //logging the invocation of add()
+ /*  
  * 4. Assigning a Function to a Variable:
- * 
- * 5. functions can optionally take inputs and optionally return a single value. How do we
- * specify inputs and how do we specify outputs
+ *
+ *   A function expression is created by declaring a variable and then assigning to function it.
+ */    let expression = function(){}; //<- declared the variable 'expression' that represents the function.
+/*
+ * 5. Functions: A piece of code that can be summoned by other code, a variable, or even itself. These snippets contain arguments, or 'seats', 
+ *      that are passed into the function so that it may return a value. The function's scope is dependant on whether if the name is a declaration or
+ *      an expression. console.log() is a common function we utilize to print to the console.
  * 
  * 6. Scope: Functons can see and modify variables in parent or global scopes. The inverse is NOT true <- question? just information?
  * 
  * 7. Closures: Functions form closures around the data they house. if an object returned from the function and is
  * held in memory somewhere or referenced that closure stays ALIVE and data can cont to exist in these closures
- */
-
-/**
- *
- * . Functions: A piece of code that can be summoned by other code, a variable, or even itself. These snippets contain arguments, or 'seats', 
- *      that are passed into the function so that it may return a value. The function's scope is dependant on whether if the name is a declaration or
- *      an expression. console.log() is a common function we utilize to print to the console
  */
 
 //function that takes in one perarameter that represents a string

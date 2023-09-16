@@ -40,12 +40,24 @@
  * 5. Functions: A piece of code that can be summoned by other code, a variable, or even itself. These snippets contain arguments, or 'seats', 
  *      that are passed into the function so that it may return a value. The function's scope is dependant on whether if the name is a declaration or
  *      an expression. console.log() is a common function we utilize to print to the console.
+ */     console.log('this is the argument passed into the log function');
+
+ /* 6. Scope: Functons can see and modify variables in parent or global scopes. The inverse is NOT true. If a function is declared within a piece of data then
+ *      then it has access to the information in the scope it's created in. For example closures are created in a parent scope, the outer function are are access 
+ *      from the child scope.
  * 
- * 6. Scope: Functons can see and modify variables in parent or global scopes. The inverse is NOT true <- question? just information?
- * 
- * 7. Closures: Functions form closures around the data they house. if an object returned from the function and is
- * held in memory somewhere or referenced that closure stays ALIVE and data can cont to exist in these closures
- */
+ * 7. Closures: Functions form closures around the data they house. If an object returned from the Function and is held in memort somewhere referenced,
+ *     that closure stays 'alive' and data can continue to exist inside the closures.
+ */    function outer(){
+        const access = "outer scope";
+       function inner(){ // <- creates a closure around the access variable
+        console.log(access);
+  }
+  return inner;
+}
+
+const closure = outer(); //<- assigns 'closure' as the result of the outer invocation
+console.log(closure()); //<- logs "outer scope" to the console
 
 //function that takes in one perarameter that represents a string
 

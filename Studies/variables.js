@@ -43,10 +43,12 @@
             //log to console. SHould return error
             console.log(kitchen); //logs TypError: Assignment to constant variable
  /* 
- * 5. Hoisting - Var declarations and function declarations are hoisted, or carried to the top of the program. Anything hoisted 
+ * 5. Hoisting - Var declarations and function declarations are hoisted, or carried to the top of the program or function. Anything hoisted 
  *      can be used after they are declared. Declarations are hoisted, not initializations.'Let' and 'const' do not get hoisted and 
  *      are actually block scoped. The way I see it: Hoisting is just 'scope based movement'.
  */
+        console.log(hoist); //can be accessed before initialization, but is undefined
+        var hoist = 'Hoisted!'; //var hoist; is hoisted to the top and leaves hoist = 'Hoisted!'
 
 
 
